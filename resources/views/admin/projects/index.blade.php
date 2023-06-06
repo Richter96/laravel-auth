@@ -50,15 +50,10 @@
                                 <a name="" id="" class="bg-violet-500 btn btn-primary w-1rem" href="{{ route('admin.projects.edit', $project) }}" role="button"><i class="fas fa-pencil fa-sm fa-fw"></i></a>
                             </div>
                             <div class="icon d-inline">
-                                <form action="{{route('admin.projects.destroy', $project)}}" method="project">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger"><i class="fas fa-trash fa-sm fa-fw w-50"></i>
-                                    </button>
-                                </form>
+
                                 <!-- Modal trigger button -->
-                                <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="modal-{{$project->id}}">
-                                    <i class="fas fa-trash fa-sm fa-fw w-50"></i>
+                                <button type="button" class="btn btn-danger w-1rem" data-bs-toggle="modal" data-bs-target="#modal-{{$project->id}}">
+                                    <i class="fas fa-trash fa-sm fa-fw w-50 "></i>
                                 </button>
 
                                 <!-- Modal Body -->
@@ -66,16 +61,20 @@
                                 <div class="modal fade" id="modal-{{$project->id}}" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitle-{{$project->id}}" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
                                         <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="modalTitle-{{$project->id}}">Delit this project</h5>
+                                            <div class="modal-header bg-danger">
+                                                <h5 class="modal-title" id="modalTitle-{{$project->id}}">Eliminare definitivamente questo progetto?</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
-                                            <div class="modal-body">
-                                                Body
+                                            <div class="modal-body text-bg-warning text-uppercase">
+                                                {{$project->title}}
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Yes</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NO</button>
+                                                <form action="{{route('admin.projects.destroy', $project)}}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-primary">YES</button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
