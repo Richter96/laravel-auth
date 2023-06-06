@@ -36,7 +36,7 @@
         <div class="mb-3">
             <label for="link_ghit" class="form-label">LINK GIHTUB</label>
             <input type="text" class="form-control @error('link_ghit') is-invalid @enderror" name="link_ghit" id="link_ghit" aria-describedby="helpId" placeholder="http://" value="{{ old('link_ghit', $project->link_ghit) }}">
-            <small id=" helpId" class="form-text text-muted">inserire url dell'immagine</small>
+            <small id=" helpId" class="form-text text-muted">inserire url link progetto ghitub</small>
             @error('link_ghit')
             <div class="alert alert-danger" role="alert">
                 <strong>Image, Error:</strong>{{ $message }}
@@ -47,7 +47,7 @@
         <div class="mb-3">
             <label for="link_site" class="form-label">LINK GIHTUB</label>
             <input type="text" class="form-control @error('link_site') is-invalid @enderror" name="link_site" id="link_site" aria-describedby="helpId" placeholder="http://" value="{{ old('link_site', $project->link_site) }}">
-            <small id=" helpId" class="form-text text-muted">inserire url dell'immagine</small>
+            <small id=" helpId" class="form-text text-muted">inserire url del sito del progetto</small>
             @error('link_site')
             <div class="alert alert-danger" role="alert">
                 <strong>Image, Error:</strong>{{ $message }}
