@@ -24,6 +24,8 @@ class ProjectSeeder extends Seeder
             $post->slug = Str::slug($post->title, '-');
             $post->description = $faker->paragraphs(asText: true);
             $post->image = $faker->imageUrl(category: 'Posts', format: 'jpg');
+            $post->link_ghit = $faker->url();
+            $post->link_site = $faker->url();
             $post->save();
         }
     }

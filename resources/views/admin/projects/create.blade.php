@@ -12,8 +12,8 @@
         {{-- title --}}
         <div class="mb-3">
             <label for="title" class="form-label">TITOLO</label>
-            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title" aria-describedby="helpId" placeholder="Inserisci un titolo">
-            <small id="helpId" class="form-text text-muted">max 200 charatteri</small>
+            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title" aria-describedby="helpId" placeholder="Inserisci un titolo " value="{{ old('title') }}">
+            <small id=" helpId" class="form-text text-muted">max 200 charatteri</small>
             @error('title')
             <div class="alert alert-danger" role="alert">
                 <strong>Name, Error:</strong>{{ $message }}
@@ -22,20 +22,42 @@
         </div>
         {{-- img --}}
         <div class="mb-3">
-            <label for="image" class="form-label">IMMGAIN</label>
-            <input type="text" class="form-control @error('image') is-invalid @enderror" name="image" id="image" aria-describedby="helpId" placeholder="http://">
-            <small id="helpId" class="form-text text-muted">inserire url dell'immagine</small>
+            <label for="image" class="form-label">IMMAGINE</label>
+            <input type="text" class="form-control @error('image') is-invalid @enderror" name="image" id="image" aria-describedby="helpId" placeholder="http://" value="{{ old('image') }}">
+            <small id=" helpId" class="form-text text-muted">inserire url dell'immagine</small>
             @error('image')
             <div class="alert alert-danger" role="alert">
                 <strong>Image, Error:</strong>{{ $message }}
             </div>
             @enderror
         </div>
-        {{-- text --}}
+        {{-- link ghit --}}
         <div class="mb-3">
-            <label for="text" class="form-label">DESCRIZIONE</label>
-            <textarea class="form-control @error('text') is-invalid @enderror" name="text" id="text" rows="5" placeholder="Inserisci qui la descrizione"></textarea>
-            @error('text')
+            <label for="link_ghit" class="form-label">LINK GIHTUB</label>
+            <input type="text" class="form-control @error('link_ghit') is-invalid @enderror" name="link_ghit" id="link_ghit" aria-describedby="helpId" placeholder="http://" value="{{ old('link_ghit') }}">
+            <small id=" helpId" class="form-text text-muted">inserire url dell'immagine</small>
+            @error('link_ghit')
+            <div class="alert alert-danger" role="alert">
+                <strong>Image, Error:</strong>{{ $message }}
+            </div>
+            @enderror
+        </div>
+        {{-- link site --}}
+        <div class="mb-3">
+            <label for="link_site" class="form-label">LINK GIHTUB</label>
+            <input type="text" class="form-control @error('link_site') is-invalid @enderror" name="link_site" id="link_site" aria-describedby="helpId" placeholder="http://" value="{{ old('link_site') }}">
+            <small id=" helpId" class="form-text text-muted">inserire url dell'immagine</small>
+            @error('link_site')
+            <div class="alert alert-danger" role="alert">
+                <strong>Image, Error:</strong>{{ $message }}
+            </div>
+            @enderror
+        </div>
+        {{-- description --}}
+        <div class="mb-3">
+            <label for="description" class="form-label">DESCRIZIONE</label>
+            <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description" rows="5" placeholder="Inserisci qui la descrizione">{{ old('desctiption') }}</textarea>
+            @error('description')
             <div class="alert alert-danger" role="alert">
                 <strong>Description, Error:</strong>{{ $message }}
             </div>
