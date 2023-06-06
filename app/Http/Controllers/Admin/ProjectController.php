@@ -81,6 +81,9 @@ class ProjectController extends Controller
     {
         $val_data =  $request->validated();
         // dd($val_data);
+        // generate the title slug
+        $slug = Project::generateSlug($val_data['title']);
+        $val_data['slug'] = $slug;
 
         $project->update($val_data);
         // redirect back 
@@ -95,6 +98,7 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        $project->delete();
+        return to_route('admin.projects.index')->with('message', 'Progetto eliminato');
     }
 }
