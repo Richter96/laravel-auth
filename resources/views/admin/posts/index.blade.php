@@ -13,7 +13,7 @@
     <h1>POSTS</h1>
 
 
-    <a class="btn btn-primary my-3" href="{{route('admin.posts.create')}}" role="button">Create new post</a>
+    <a class="btn btn-primary my-3" href="{{route('admin.projects.create')}}" role="button">Create new post</a>
 
     <div class="table-responsive">
         <table class="table table-secondary">
