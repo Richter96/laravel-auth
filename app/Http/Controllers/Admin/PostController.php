@@ -16,7 +16,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('id')->paginate(6);
+        $posts = Post::orderByDesc('id')->get(); //->paginate(6)aggiungere ->paginate(6) dopo la parentesi tonda ti permette di scegliere quanti elementi far vedere.
         // dd($posts);
         return view('admin.posts.index', compact('posts'));
     }
@@ -70,7 +70,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**
