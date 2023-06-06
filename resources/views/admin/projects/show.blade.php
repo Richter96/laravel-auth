@@ -15,6 +15,6 @@
     </div>
 </div>
 
-<a class="btn btn-primary my-3" href="{{route('admin.posts.index')}}" role="button">Return</a>
+<a class="btn btn-primary my-3" href="{{route('admin.projects.index')}}" role="button">Return</a>
 
 @endsection
