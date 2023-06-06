@@ -39,7 +39,15 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        //
+        $val_data =  $request->validated();
+        // generate the title slug
+        $slug = Post::generateSlug($val_data['title']);
+        $val_data['slug'] = $slug;
+        // Create the new Post
+        // dd($val_data);
+        Post::create($val_data);
+        // redirect back
+        return to_route('admin.posts.index')->with('message', 'Post Created Successfully');
     }
 
     /**
