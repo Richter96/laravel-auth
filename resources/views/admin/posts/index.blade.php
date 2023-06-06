@@ -33,7 +33,7 @@
                 <tr>
                     <td scope="row">{{$post->id}}</td>
                     <td>
-                        <img width="100" class="img-fluid" src="" alt="{{$post->title}}">
+                        <img width="100" class="img-fluid" src="{{$post->image}}" alt="{{$post->title}}">
                     </td>
 
                     <td>{{$post->title}}</td>
@@ -43,14 +43,14 @@
                         <div class="row row-cols-3">
 
                             <div class="icon d-inline">
-                                <a name="" id="" class="bg-violet-500 btn btn-primary w-1rem" href="{{ Route('admin.posts.show', $post->id) }}" role="button"><i class="fas fa-eye fa-sm fa-fw"></i></a>
+                                <a name="" id="" class="bg-violet-500 btn btn-primary w-1rem" href="{{route('admin.posts.show', $post)}}" role="button"><i class="fas fa-eye fa-sm fa-fw"></i></a>
                             </div>
 
                             <div class="icon d-inline">
-                                <a name="" id="" class="bg-violet-500 btn btn-primary w-1rem" href="{{ Route('admin.posts.edit', $post->id) }}" role="button"><i class="fas fa-pencil fa-sm fa-fw"></i></a>
+                                <a name="" id="" class="bg-violet-500 btn btn-primary w-1rem" href="{{ route('admin.posts.edit', $post) }}" role="button"><i class="fas fa-pencil fa-sm fa-fw"></i></a>
                             </div>
                             <div class="icon d-inline">
-                                <form action="{{route('admin.posts.destroy', $post->id)}}" method="post">
+                                <form action="{{route('admin.posts.destroy', $post)}}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger"><i class="fas fa-trash fa-sm fa-fw w-50"></i>
