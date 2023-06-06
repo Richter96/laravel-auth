@@ -3,6 +3,7 @@
 
 @section('content')
 <div class="container">
+    @include('partials.errors')
 
     <form action="{{ route('admin.posts.store') }}" method="post">
         @csrf
