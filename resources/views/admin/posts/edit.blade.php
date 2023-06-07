@@ -7,6 +7,8 @@
 
     <form action="{{ route('admin.posts.store') }}" method="post">
         @csrf
+
+
         {{-- title --}}
         <div class="mb-3">
             <label for="title" class="form-label">TITOLO</label>
